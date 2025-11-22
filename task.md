@@ -21,6 +21,9 @@
     - [x] Nasadenie reálnych obrázkov pre všetky sezóny
 - [x] Pridanie odkazu na Google Maps (Kontakt)
 - [x] Úprava Docker deploymentu (Volume Mapping)
-    - [ ] SEO optimalizácia
+    - [x] SEO optimalizácia
+        - [x] Meta tagy (OG, Twitter, Canonical)
+        - [x] Structured Data (JSON-LD)
+        - [x] Robots.txt a Sitemap.xml
     - [x] Príprava Docker prostredia (Dockerfile, docker-compose.yml)
     - [ ] Finálna kontrola obsahu
