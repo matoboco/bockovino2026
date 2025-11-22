@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }).addTo(map);
 
         L.marker([wineryLat, wineryLng]).addTo(map)
-            .bindPopup('<b>Vinárstvo BOČKO</b><br>Družstevná 49, Šenkvice<br><a href="https://www.google.com/maps/search/?api=1&query=48.29820,17.3496664" target="_blank" rel="noopener noreferrer">Navigovať na Google Maps</a>')
+            .bindPopup('<b>Vinárstvo BOČKO</b><br>Družstevná 49, Šenkvice<br><a href="https://www.google.com/maps/search/?api=1&query=48.29820,17.3496664" target="_blank" rel="noopener noreferrer">Navigovať</a>')
             .openPopup();
     }
 
