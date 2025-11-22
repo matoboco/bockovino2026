@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinárstvo BOČKO | Rodinné vinárstvo zo Šenkvíc</title>
+    <meta name="description"
+        content="Rodinné vinárstvo Bočko zo Šenkvíc. Tradičná výroba vína s láskou a úctou k prírode.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#domov">
+                    <img src="assets/images/logo.png" alt="Vinárstvo BOČKO Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#domov" class="active">Domov</a></li>
+                    <li><a href="#o-nas">O nás</a></li>
+                    <li><a href="#vinohrady">Vinohrady</a></li>
+                    <li><a href="#vina">Vína</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="domov" class="hero">
+            <div class="hero-bg">
+                <img src="assets/images/hero-bg.png" alt="Vinice pod Malými Karpatmi">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container text-center">
+                <h1 class="hero-title">Rodinné vinárstvo zo Šenkvíc</h1>
+                <p class="hero-subtitle">Tradícia, ktorá chutí. Vína robené s láskou a úctou k prírode.</p>
+                <a href="#vina" class="btn btn-primary">Ochutnajte naše vína</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro section-padding">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>Vitajte u Bočkovcov</h2>
+                        <p>Naše rodinné vinárstvo sme založili v apríli 1991, avšak výrobe vína a pestovaniu viniča sa v
+                            našej rodine venujeme už niekoľko generácií. Základom našej práce je vinohrad a poctivý
+                            prístup.</p>
+                        <a href="#o-nas" class="btn btn-secondary mt-md">Náš príbeh</a>
+                    </div>
+                    <div class="intro-image">
+                        <img src="assets/images/wine-glass.png" alt="Pohár vína vo vinohrade"
+                            class="img-rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O nas Section -->
+        <section id="o-nas" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center mb-lg">
+                    <h2>Náš príbeh</h2>
+                    <p>Rodinná tradícia zo Šenkvíc</p>
+                </div>
+                <div class="intro-grid">
+                    <div class="intro-image">
+                        <img src="assets/images/marian-bocko.jpg" alt="Ing. Marián Bočko" class="img-rounded shadow">
+                    </div>
+                    <div class="content-block">
+                        <h3>Od koreňov k vínu</h3>
+                        <p>Naše rodinné vinárstvo sme založili v apríli 1991. Avšak výrobe vína a pestovaniu viniča sa
+                            venuje v našej rodine už niekoľko generácií. Ja osobne už viac ako 40 rokov.</p>
+                        <p>Volám sa <strong>Marián Bočko</strong> a pochádzam zo sedliackej rodiny, z maminej i otcovej
+                            strany. Moji starí rodičia žili v Šenkviciach a okrem iného sa venovali aj pestovaniu viniča
+                            a výrobe vína. Od detstva som sa teda stretával s hroznom a videl, ako dedo dorába víno v
+                            pivnici pod chalupou.</p>
+                        <p>Táto láska k pôde a remeslu sa preniesla aj na mňa. Dnes pokračujeme v tradícii s využitím
+                            moderných poznatkov, ale so stále rovnakou úctou k prírode.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vinohrady Section -->
+        <section id="vinohrady" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-lg">
+                    <h2>Naše vinohrady</h2>
+                    <p>Základ našej práce a kvality</p>
+                </div>
+                <div class="intro-grid">
+                    <div class="content-block">
+                        <h3>Integrovaná produkcia</h3>
+                        <p>Základ našej práce je vinohrad. Hrozno na vína máme z vlastných vinohradov, časť z neho aj
+                            predávame. Už 15 rokov obrábame cca <strong>9 hektárov viníc</strong> na štyroch miestach v
+                            Šenkviciach.</p>
+                        <p>Naše vinohrady sú v tzv. integrovanej produkcii. Čo to znamená?</p>
+                        <ul style="list-style-position: inside; margin-bottom: 20px; color: var(--color-text-light);">
+                            <li>Nepoužívame žiadne umelé hnojivo.</li>
+                            <li>Máme mechanickú plečku na obrábanie pôdy.</li>
+                            <li>Rady viniča máme zatrávnené špeciálnymi bylinami.</li>
+                            <li>Na ochranu viniča používame len prírodné prípravky, meď a síru (v limitovaných
+                                množstvách).</li>
+                        </ul>
+                        <p>Týmto prístupom chránime nielen prírodu, ale aj zdravie našich zákazníkov. Vďaka vlastnému
+                            pestovaniu vieme garantovať aj nízku hladinu histamínu v našich vínach.</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="assets/images/grape-detail.png" alt="Detail hrozna vo vinohrade"
+                            class="img-rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vina Section -->
+        <section id="vina" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center mb-lg">
+                    <h2>Naše vína</h2>
+                    <p>Široká paleta chutí zo Šenkvíc</p>
+                </div>
+
+                <div class="content-block text-center" style="max-width: 800px; margin: 0 auto 60px;">
+                    <p>V našom vinárstve nájdete širokú skladbu vín. Od ľahkých aromatických, až po dlhšie vyzrievajúce
+                        vína. Pri ich výrobe v plnej miere využívame modernú technológiu – riadené kvasenie, odkalenie,
+                        chladenie.</p>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Mladé a svieže biele vína</h3>
+                    <div class="wine-grid">
+                        <div class="wine-card" data-id="muskat-ottonel">
+                            <h4>Muškát Ottonel</h4>
+                            <p class="wine-short-desc">Ľahké aromatické víno s kvetinovými tónmi.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Muškát Ottonel"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Ľahké, aromatické víno s výrazným kvetinovým buketom. V chuti je jemné,
+                                            harmonické, so sviežou kyselinkou. Ideálne pre milovníkov voňavých vín.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Vhodné k dezertom,
+                                            husacej pečeni alebo ako aperitív.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="sauvignon">
+                            <h4>Sauvignon</h4>
+                            <p class="wine-short-desc">Svieže víno s ovocným charakterom.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Sauvignon" class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Svieže víno s charakteristickou vôňou po žihľave, egrešoch či broskyniach.
+                                            Chuť je plná, ovocná s príjemnou kyselinkou.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Kozí syr, špargľa,
+                                            ľahké úpravy rýb.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="veltlin">
+                            <h4>Veltlínske zelené</h4>
+                            <p class="wine-short-desc">Klasika Malokarpatskej oblasti, korenisté a svieže.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Veltlínske zelené"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Klasika Malokarpatskej oblasti. Víno žltozelenej farby, vo vôni dominujú tóny
+                                            mandlí a lipového kvetu. Chuť je korenistá, plná a svieža.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Tradičné slovenské
+                                            jedlá, bravčové mäso, hydina.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="rizling-vlassky">
+                            <h4>Rizling vlašský</h4>
+                            <p class="wine-short-desc">Jemné víno s príjemnou kyselinkou.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Rizling vlašský"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Víno s jemnou kvetinovou vôňou a sviežou chuťou s typickou odrodovou
+                                            kyselinkou. Veľmi obľúbené a pitné víno.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Studené predjedlá,
+                                            ryby, zeleninové šaláty.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="muller">
+                            <h4>Müller Thurgau</h4>
+                            <p class="wine-short-desc">Ľahké víno na bežné pitie.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Müller Thurgau"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Ľahké, nekomplikované víno s jemnou muškátovo-ovocnou vôňou. Má nižší obsah
+                                            kyselín, vďaka čomu je veľmi harmonické.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Jednoduché úpravy
+                                            hydiny, cestoviny, mäkké syry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Vyzreté biele vína</h3>
+                    <p class="text-center">Vína, ktoré boli v kontakte s drevom a sú určené aj na strednodobú
+                        archiváciu.</p>
+                    <div class="wine-grid">
+                        <div class="wine-card" data-id="tramin">
+                            <h4>Tramín červený</h4>
+                            <p class="wine-short-desc">Plné, korenisté víno s bohatou aromatikou.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Tramín červený"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Víno zlatožltej farby s intenzívnou vôňou korenia a ruží. Chuť je plná,
+                                            extraktívna, s dlhou dochuťou. Vyzreté v dreve.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ázijská kuchyňa, syry
+                                            s modrou plesňou, paštéty.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="rizling-rynsky">
+                            <h4>Rizling rýnsky</h4>
+                            <p class="wine-short-desc">Kráľ vín, vhodný na dlhšie zrenie.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Rizling rýnsky"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Kráľ vín. Ušľachtilé víno s vôňou lipového kvetu a medu. Chuť je korenistá,
+                                            plná, s pikantnou kyselinkou, ktorá mu zaručuje dlhovekosť.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Pečená kačica,
+                                            husacina, sladkovodné ryby.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-card" data-id="silvan">
+                            <h4>Silvánske zelené</h4>
+                            <p class="wine-short-desc">Tradičná odroda pre Šenkvice, minerálne a plné.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Silvánske zelené"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Tradičná, no dnes už vzácnejšia odroda. Víno je neutrálne, ale plné a
+                                            minerálne, s jemnou zemitou dochuťou. Typické pre Šenkvice.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Hutnejšie jedlá,
+                                            bravčové mäso, smotanové omáčky.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Červené vína</h3>
+                    <div class="wine-grid">
+                        <div class="wine-card" data-id="cervene-cuvee">
+                            <h4>Červené cuvée</h4>
+                            <p class="wine-short-desc">Zameriavame sa na dlhodobejšie vyzrievanie červených vín pre
+                                dosiahnutie plnosti a harmónie.</p>
+                            <div class="wine-detail-expandable">
+                                <div class="detail-content">
+                                    <img src="assets/images/wine-glass.png" alt="Červené cuvée"
+                                        class="detail-img-small">
+                                    <div class="detail-text">
+                                        <p>Kupáž našich najlepších červených odrôd. Víno zrelo v dubových sudoch, čo mu
+                                            dodalo plnosť, zamatovosť a tóny vanilky a čokolády.</p>
+                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Divina, hovädzie
+                                            steaky, tvrdé zrejúce syry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="kontakt" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center mb-lg">
+                    <h2>Kontakt</h2>
+                    <p>Zastavte sa u nás na pohárik</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-info-box shadow">
+                            <div class="contact-item">
+                                <h3>Adresa</h3>
+                                <p><a href="https://www.google.com/maps/search/?api=1&query=48.29820,17.3496664"
+                                        target="_blank" rel="noopener noreferrer">Ing. Marián Bočko -
+                                        Vinárstvo<br>Družstevná 49<br>900 81 Šenkvice</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Telefón</h3>
+                                <p><a href="tel:+421905446150">+421 905 446 150</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>E-mail</h3>
+                                <p><a href="mailto:vino@mbocko.sk">vino@mbocko.sk</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Otváracie hodiny</h3>
+                                <p>Degustácie a nákup vína po telefonickom dohovore.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <div class="content-block">
+                            <h3>Napíšte nám</h3>
+                            <p>Máte záujem o ochutnávku alebo objednávku vína? Napíšte nám.</p>
+                        </div>
+                        <!-- Formspree form endpoint placeholder -->
+                        <form action="https://formspree.io/f/xrbjnjzr" method="POST">
+                            <div class="form-group">
+                                <label for="name">Meno a Priezvisko</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Správa</label>
+                                <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Odoslať správu</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="map-container shadow" id="map">
+                    <!-- Leaflet Map will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 Vinárstvo BOČKO</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+# Task List - Vinárstvo BOČKO
+
+- [x] Analýza existujúceho webu a stiahnutie podkladov
+    - [x] Stiahnutie textov do knowledge_base.md
+    - [x] Stiahnutie loga a obrázkov do assets/
+- [x] Návrh a Plánovanie
+    - [x] Vytvorenie implementation_plan.md (Plán webu)
+    - [x] Odsúhlasenie plánu s používateľom
+- [ ] Implementácia Dizajnu a Štruktúry
+    - [ ] Nastavenie projektu (HTML/CSS štruktúra)
+    - [ ] Vytvorenie dizajnového systému (farby, typografia, UI komponenty)
+    - [x] Generovanie tematických obrázkov (po konzultácii)
+- [x] Implementácia Leaflet mapy a formulára
+    - [x] Nahradenie Google Maps za Leaflet.js
+    - [x] Implementácia mapy v main.js (súradnice Šenkvice)
+    - [x] Nastavenie kontaktného formulára (Formspree)
+- [x] Implementácia sezónneho pozadia
+    - [x] JS logika pre detekciu ročného obdobia
+- [x] Implementácia sezónneho pozadia
+    - [x] JS logika pre detekciu ročného obdobia
+    - [x] Nasadenie reálnych obrázkov pre všetky sezóny
+- [x] Pridanie odkazu na Google Maps (Kontakt)
+- [x] Úprava Docker deploymentu (Volume Mapping)
+    - [ ] SEO optimalizácia
+    - [x] Príprava Docker prostredia (Dockerfile, docker-compose.yml)
+    - [ ] Finálna kontrola obsahu
