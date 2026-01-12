@@ -76,4 +76,92 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // ========================================
+    // Contact Form with n8n Integration
+    // ========================================
+
+    // Generate token on page load
+    async function generateFormToken() {
+        try {
+            const response = await fetch('https://n8n.bocko.sk/webhook/generate-token');
+            const data = await response.json();
+
+            if (data.success && data.token) {
+                // Store token in hidden field
+                const tokenField = document.getElementById('form-token');
+                if (tokenField) {
+                    tokenField.value = data.token;
+                    console.log('Form token generated successfully');
+                }
+            } else {
+                console.error('Token generation failed:', data);
+            }
+        } catch (error) {
+            console.error('Error generating token:', error);
+        }
+    }
+
+    // Call token generation on page load
+    generateFormToken();
+
+    // Handle form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form elements
+            const submitButton = document.getElementById('submit-button');
+            const successMessage = document.getElementById('form-success-message');
+            const errorMessage = document.getElementById('form-error-message');
+
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Odosielam...';
+
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Get form data
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://n8n.bocko.sk/webhook/submit-form', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Show success message
+                    successMessage.style.display = 'block';
+
+                    // Reset form
+                    contactForm.reset();
+
+                    // Generate new token for next submission
+                    generateFormToken();
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                // Show error message
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Odoslať správu';
+            }
+        });
+    }
 });
