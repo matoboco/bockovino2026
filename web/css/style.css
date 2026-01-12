@@ -559,40 +559,46 @@ footer {
     background-color: #d4edda;
     border: 2px solid #28a745;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 30px;
+    margin: 0 auto 40px;
     text-align: center;
+    max-width: 600px;
 }
 
 .form-success h4 {
     color: #155724;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-family: var(--font-heading);
 }
 
 .form-success p {
     color: #155724;
     margin: 0;
+    font-size: 1rem;
 }
 
 .form-error {
     background-color: #f8d7da;
     border: 2px solid #dc3545;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 30px;
+    margin: 0 auto 40px;
     text-align: center;
+    max-width: 600px;
 }
 
 .form-error h4 {
     color: #721c24;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-family: var(--font-heading);
 }
 
 .form-error p {
     color: #721c24;
     margin: 0;
+    font-size: 1rem;
 }
 
 /* Button loading state */
