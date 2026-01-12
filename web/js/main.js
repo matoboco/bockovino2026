@@ -125,20 +125,12 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.style.display = 'none';
 
             // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-                token: document.getElementById('form-token').value
-            };
+            const formData = new FormData(contactForm);
 
             try {
                 const response = await fetch('https://n8n.bocko.sk/webhook/submit-form', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
+                    body: formData
                 });
 
                 const result = await response.json();
