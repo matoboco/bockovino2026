@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bockovino-web:latest
+    ports:
+      - "9980:80"
+    restart: always
+    container_name: bockovino-web
+    environment:
+      # Nastavenie git repository a vetvy
+      - GIT_REPO_URL=https://github.com/matoboco/bockovino2026.git
+      - GIT_BRANCH=main
+    # Voliteľné: persist git repo medzi reštartami (rýchlejší git pull)
+    volumes:
+      - git-repo:/app/repo
+    # Health check - kontrola, či nginx beží
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  git-repo:
+    driver: local
