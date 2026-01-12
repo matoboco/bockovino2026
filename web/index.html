@@ -97,11 +97,14 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 
-<body>
+<body x-data="vinarstvoApp()">
 
     <header class="main-header">
         <div class="container header-container">
@@ -110,16 +113,16 @@
                     <img src="assets/images/logo.png" alt="Vinárstvo BOČKO Logo" class="logo-img">
                 </a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" :class="{ 'active': mobileMenuOpen }">
                 <ul>
-                    <li><a href="#domov" class="active">Domov</a></li>
-                    <li><a href="#o-nas">O nás</a></li>
-                    <li><a href="#vinohrady">Vinohrady</a></li>
-                    <li><a href="#vina">Vína</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#domov" class="active" @click="mobileMenuOpen = false">Domov</a></li>
+                    <li><a href="#o-nas" @click="mobileMenuOpen = false">O nás</a></li>
+                    <li><a href="#vinohrady" @click="mobileMenuOpen = false">Vinohrady</a></li>
+                    <li><a href="#vina" @click="mobileMenuOpen = false">Vína</a></li>
+                    <li><a href="#kontakt" @click="mobileMenuOpen = false">Kontakt</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu-toggle">
+            <div class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :class="{ 'active': mobileMenuOpen }">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -131,7 +134,7 @@
         <!-- Hero Section -->
         <section id="domov" class="hero">
             <div class="hero-bg">
-                <img src="assets/images/hero-bg.png" alt="Vinice pod Malými Karpatmi">
+                <img :src="seasonalBackground.src" :alt="seasonalBackground.alt">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content container text-center">
@@ -236,7 +239,7 @@
                     <h3>Mladé a svieže biele vína</h3>
                     <p class="text-center">Mladé vína na rýchlu konzumáciu.</p>
                     <div class="wine-grid">
-                        <div class="wine-card" data-id="muskat-ottonel">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }">
                             <h4>Muškát Ottonel</h4>
                             <p class="wine-short-desc">Ľahké aromatické víno s kvetinovými tónmi.</p>
                             <div class="wine-detail-expandable">
@@ -252,7 +255,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="sauvignon">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="sauvignon">
                             <h4>Sauvignon</h4>
                             <p class="wine-short-desc">Svieže víno s ovocným charakterom.</p>
                             <div class="wine-detail-expandable">
@@ -267,7 +270,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="veltlin">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="veltlin">
                             <h4>Veltlínske zelené</h4>
                             <p class="wine-short-desc">Klasika Malokarpatskej oblasti, korenisté a svieže.</p>
                             <div class="wine-detail-expandable">
@@ -283,7 +286,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="rizling-vlassky">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="rizling-vlassky">
                             <h4>Rizling vlašský</h4>
                             <p class="wine-short-desc">Jemné víno s príjemnou kyselinkou.</p>
                             <div class="wine-detail-expandable">
@@ -299,7 +302,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="muller">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="muller">
                             <h4>Müller Thurgau</h4>
                             <p class="wine-short-desc">Ľahké víno na bežné pitie.</p>
                             <div class="wine-detail-expandable">
@@ -323,7 +326,7 @@
                     <p class="text-center">Vína, ktoré boli v kontakte s drevom a sú určené aj na strednodobú
                         archiváciu.</p>
                     <div class="wine-grid">
-                        <div class="wine-card" data-id="tramin">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="tramin">
                             <h4>Tramín červený</h4>
                             <p class="wine-short-desc">Plné, korenisté víno s bohatou aromatikou.</p>
                             <div class="wine-detail-expandable">
@@ -339,7 +342,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="rizling-rynsky">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="rizling-rynsky">
                             <h4>Rizling rýnsky</h4>
                             <p class="wine-short-desc">Kráľ vín, vhodný na dlhšie zrenie.</p>
                             <div class="wine-detail-expandable">
@@ -355,7 +358,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wine-card" data-id="silvan">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="silvan">
                             <h4>Silvánske zelené</h4>
                             <p class="wine-short-desc">Tradičná odroda pre Šenkvice, minerálne a plné.</p>
                             <div class="wine-detail-expandable">
@@ -377,7 +380,7 @@
                 <div class="wine-category">
                     <h3>Červené vína</h3>
                     <div class="wine-grid">
-                        <div class="wine-card" data-id="cervene-cuvee">
+                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="cervene-cuvee">
                             <h4>Červené cuvée</h4>
                             <p class="wine-short-desc">Zameriavame sa na dlhodobejšie vyzrievanie červených vín pre
                                 dosiahnutie plnosti a harmónie.</p>
@@ -407,14 +410,14 @@
                     <p>Zastavte sa u nás na pohárik</p>
                 </div>
 
-                <!-- Success Message (hidden by default) -->
-                <div id="form-success-message" class="form-success" style="display: none;">
+                <!-- Success Message -->
+                <div x-show="formSuccess" class="form-success" x-transition>
                     <h4>✓ Dotaz bol úspešne odoslaný!</h4>
                     <p>Ďakujeme za vašu správu. Čoskoro sa vám ozveme.</p>
                 </div>
 
-                <!-- Error Message (hidden by default) -->
-                <div id="form-error-message" class="form-error" style="display: none;">
+                <!-- Error Message -->
+                <div x-show="formError" class="form-error" x-transition>
                     <h4>✗ Nastala chyba pri odosielaní</h4>
                     <p>Skúste to prosím znova alebo nás kontaktujte telefonicky.</p>
                 </div>
@@ -450,8 +453,8 @@
                         </div>
 
                         <!-- Contact Form -->
-                        <form id="contact-form" method="POST">
-                            <input type="hidden" id="form-token" name="token" value="">
+                        <form @submit.prevent="submitForm">
+                            <input type="hidden" name="token" x-model="formToken">
                             <div class="form-group">
                                 <label for="name">Meno a Priezvisko</label>
                                 <input type="text" id="name" name="name" class="form-control" required>
@@ -464,7 +467,7 @@
                                 <label for="message">Správa</label>
                                 <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="submit-button">Odoslať správu</button>
+                            <button type="submit" class="btn btn-primary" :disabled="formSubmitting" x-text="formSubmitting ? 'Odosielam...' : 'Odoslať správu'"></button>
                         </form>
                     </div>
                 </div>
@@ -483,7 +486,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=5"></script>
+    <script src="js/main.js?v=6"></script>
 </body>
 
 </html>
