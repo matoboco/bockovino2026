@@ -436,8 +436,22 @@
                             <h3>Napíšte nám</h3>
                             <p>Máte záujem o ochutnávku alebo objednávku vína? Napíšte nám.</p>
                         </div>
-                        <!-- Formspree form endpoint placeholder -->
-                        <form action="https://formspree.io/f/xrbjnjzr" method="POST">
+
+                        <!-- Success Message (hidden by default) -->
+                        <div id="form-success-message" class="form-success" style="display: none;">
+                            <h4>✓ Dotaz bol úspešne odoslaný!</h4>
+                            <p>Ďakujeme za vašu správu. Čoskoro sa vám ozveme.</p>
+                        </div>
+
+                        <!-- Error Message (hidden by default) -->
+                        <div id="form-error-message" class="form-error" style="display: none;">
+                            <h4>✗ Nastala chyba pri odosielaní</h4>
+                            <p>Skúste to prosím znova alebo nás kontaktujte telefonicky.</p>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="contact-form" method="POST">
+                            <input type="hidden" id="form-token" name="token" value="">
                             <div class="form-group">
                                 <label for="name">Meno a Priezvisko</label>
                                 <input type="text" id="name" name="name" class="form-control" required>
@@ -450,7 +464,7 @@
                                 <label for="message">Správa</label>
                                 <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Odoslať správu</button>
+                            <button type="submit" class="btn btn-primary" id="submit-button">Odoslať správu</button>
                         </form>
                     </div>
                 </div>
