@@ -4,8 +4,10 @@ function vinarstvoApp() {
         // Mobile menu state
         mobileMenuOpen: false,
 
+        // Wine detail modal
+        selectedWine: null,
+
         // Form state
-        formToken: '',
         formSubmitting: false,
         formSuccess: false,
         formError: false,
@@ -24,8 +26,20 @@ function vinarstvoApp() {
             // Initialize Leaflet map
             this.initMap();
 
-            // Generate form token
-            this.generateFormToken();
+            // Close wine modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') this.selectedWine = null;
+            });
+        },
+
+        openWine(id) {
+            this.selectedWine = id;
+            document.body.style.overflow = 'hidden';
+        },
+
+        closeWine() {
+            this.selectedWine = null;
+            document.body.style.overflow = '';
         },
 
         // Set seasonal background based on current month
@@ -81,26 +95,8 @@ function vinarstvoApp() {
             }
         },
 
-        // Generate form token from n8n webhook
-        async generateFormToken() {
-            try {
-                const response = await fetch('https://n8n.bocko.sk/webhook/generate-token');
-                const data = await response.json();
-
-                if (data.success && data.token) {
-                    this.formToken = data.token;
-                    console.log('Form token generated successfully');
-                } else {
-                    console.error('Token generation failed:', data);
-                }
-            } catch (error) {
-                console.error('Error generating token:', error);
-            }
-        },
-
-        // Submit contact form
+        // Submit contact form via Formspree
         async submitForm(event) {
-            // Reset messages
             this.formSuccess = false;
             this.formError = false;
             this.formSubmitting = true;
@@ -109,24 +105,17 @@ function vinarstvoApp() {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch('https://n8n.bocko.sk/webhook/submit-form', {
+                const response = await fetch('https://formspree.io/f/xrbjnjzr', {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
                 });
 
-                const result = await response.json();
-
-                if (response.ok && result.success) {
-                    // Show success message
+                if (response.ok) {
                     this.formSuccess = true;
-
-                    // Reset form
                     form.reset();
-
-                    // Generate new token
-                    await this.generateFormToken();
-
-                    // Scroll to success message
                     this.$nextTick(() => {
                         document.querySelector('.form-success')?.scrollIntoView({
                             behavior: 'smooth',
@@ -134,7 +123,6 @@ function vinarstvoApp() {
                         });
                     });
                 } else {
-                    // Show error message
                     this.formError = true;
                     this.$nextTick(() => {
                         document.querySelector('.form-error')?.scrollIntoView({

@@ -350,48 +350,88 @@ img {
     /* Remove margin when collapsed */
 }
 
-/* Expandable Wine Detail */
-.wine-detail-expandable {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    opacity: 0;
-    text-align: left;
-    margin-top: 0;
-}
-
-.wine-card.active .wine-detail-expandable {
-    max-height: 500px;
-    /* Arbitrary large height */
-    opacity: 1;
-    margin-top: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.detail-content {
+/* Wine Detail Modal */
+.wine-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 200;
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.detail-img-small {
-    width: 60px;
-    /* Smaller image */
+.wine-modal {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.wine-modal h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+}
+
+.wine-modal-type {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.wine-modal-img {
+    width: 80px;
     height: auto;
-    flex-shrink: 0;
+    margin: 0 auto 25px;
 }
 
-.detail-text p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+.wine-modal p {
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--color-text-main);
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-.detail-text .food-pairing {
-    font-size: 0.85rem;
+.wine-modal .food-pairing {
+    font-size: 0.9rem;
     color: var(--color-text-light);
     font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 5px;
+}
+
+.wine-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.wine-modal-close:hover {
+    color: var(--color-primary);
 }
 
 .wine-category {
