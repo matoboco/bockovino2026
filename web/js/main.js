@@ -4,6 +4,9 @@ function vinarstvoApp() {
         // Mobile menu state
         mobileMenuOpen: false,
 
+        // Wine detail modal
+        selectedWine: null,
+
         // Form state
         formToken: '',
         formSubmitting: false,
@@ -26,6 +29,21 @@ function vinarstvoApp() {
 
             // Generate form token
             this.generateFormToken();
+
+            // Close wine modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') this.selectedWine = null;
+            });
+        },
+
+        openWine(id) {
+            this.selectedWine = id;
+            document.body.style.overflow = 'hidden';
+        },
+
+        closeWine() {
+            this.selectedWine = null;
+            document.body.style.overflow = '';
         },
 
         // Set seasonal background based on current month

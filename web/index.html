@@ -102,7 +102,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 
 <body x-data="vinarstvoApp()">
@@ -239,119 +239,33 @@
                 <div class="wine-category">
                     <h3>Biele vína</h3>
                     <div class="wine-grid">
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="muller">
+                        <div class="wine-card" @click="openWine('muller')">
                             <h4>Müller Thurgau</h4>
                             <p class="wine-short-desc">Biele, suché. Ľahké víno s jemnou muškátovou vôňou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Müller Thurgau"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Ľahké, nekomplikované víno s jemnou muškátovo-ovocnou vôňou. Má nižší obsah
-                                            kyselín, vďaka čomu je veľmi harmonické a príjemne pitné.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Jednoduché úpravy
-                                            hydiny, cestoviny, mäkké syry.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="solaris-suche">
+                        <div class="wine-card" @click="openWine('solaris-suche')">
                             <h4>Solaris</h4>
                             <p class="wine-short-desc">Biele, suché. Moderná odroda s výraznou ovocnou arómou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Solaris"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Moderná medziodrodová odroda s výraznou ovocnou arómou po citrusoch a tropickom ovocí.
-                                            Svieže, minerálne víno s príjemnou chuťou. Odolná odroda pestovaná s minimálnym
-                                            chemickým ošetrením.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ryby, morské plody,
-                                            ľahké šaláty, sushi.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="veltlin">
+                        <div class="wine-card" @click="openWine('veltlin')">
                             <h4>Veltlínske zelené</h4>
                             <p class="wine-short-desc">Biele, suché. Klasika Malokarpatskej oblasti.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Veltlínske zelené"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Klasika Malokarpatskej oblasti. Víno žltozelenej farby, vo vôni dominujú tóny
-                                            mandlí a lipového kvetu. Chuť je korenistá, plná a svieža.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Tradičné slovenské
-                                            jedlá, bravčové mäso, hydina.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="rizling-vlassky">
+                        <div class="wine-card" @click="openWine('rizling-vlassky')">
                             <h4>Rizling vlašský</h4>
                             <p class="wine-short-desc">Biele, suché. Jemné víno s príjemnou kyselinkou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Rizling vlašský"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Víno s jemnou kvetinovou vôňou a sviežou chuťou s typickou odrodovou
-                                            kyselinkou. Veľmi obľúbené a pitné víno.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Studené predjedlá,
-                                            ryby, zeleninové šaláty.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="moravsky-muskat">
+                        <div class="wine-card" @click="openWine('moravsky-muskat')">
                             <h4>Moravský Muškát</h4>
                             <p class="wine-short-desc">Biele, polosuché. Aromatické víno s intenzívnou muškátovou vôňou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Moravský Muškát"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Aromatická odroda s intenzívnou muškátovou vôňou a jemne sladkastou chuťou.
-                                            Príjemne voňavé, pitné víno vhodné aj pre menej skúsených degustátorov.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Pikantné jedlá,
-                                            ázijská kuchyňa, ovocné dezerty, výborne aj ako aperitív.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="palava">
+                        <div class="wine-card" @click="openWine('palava')">
                             <h4>Pálava</h4>
                             <p class="wine-short-desc">Biele, polosuché. Aromatické víno s vôňou ruží a korenia.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Pálava"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Kríženie Tramínu červeného a Mülleru Thurgau. Aromatická odroda s výraznou
-                                            vôňou ruží, korenia a medu. Plné, extraktívne víno s príjemnou
-                                            zvyškovou sladkosťou.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Korenisté jedlá,
-                                            ázijská kuchyňa, syry s modrou plesňou, husacia pečeň.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="solaris-sladke">
+                        <div class="wine-card" @click="openWine('solaris-sladke')">
                             <h4>Solaris <span style="font-weight: 400; font-size: 0.85em;">(sladké, 0.5l)</span></h4>
                             <p class="wine-short-desc">Biele, sladké. Neskorý zber s medovo-ovocnými tónmi.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Solaris sladké"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Neskorý zber so zvýšeným obsahom cukru. Víno s medovo-ovocnými tónmi,
-                                            plné a harmonické. Bohatá chuť s dlhou sladkou dochuťou.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Dezerty,
-                                            foie gras, modré syry, ovocné torty.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -359,57 +273,17 @@
                 <div class="wine-category">
                     <h3>Ružové vína</h3>
                     <div class="wine-grid">
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="cabernet-rose">
+                        <div class="wine-card" @click="openWine('cabernet-rose')">
                             <h4>Cabernet Sauvignon rosé</h4>
                             <p class="wine-short-desc">Ružové, polosuché. Svieže víno s ovocnou vôňou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Cabernet Sauvignon rosé"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Ružové víno lososovej farby s príjemnou ovocnou vôňou po lesnom ovocí
-                                            a jahodách. Svieže, ľahké a veľmi pitné víno s jemnou zvyškovou
-                                            sladkosťou.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ľahké letné jedlá,
-                                            grilované mäso, šaláty, pizza.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="frankovka-rose">
+                        <div class="wine-card" @click="openWine('frankovka-rose')">
                             <h4>Frankovka modrá rosé <span style="font-weight: 400; font-size: 0.85em;">(sladké, 0.5l)</span></h4>
                             <p class="wine-short-desc">Ružové, sladké. Jemné ovocné víno s príjemnou sladkosťou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Frankovka modrá rosé"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Sladké ružové víno z odrody Frankovka modrá. Jemná ovocná chuť
-                                            s tónmi lesného ovocia a višní. Príjemne pitné víno vhodné
-                                            aj pre tých, ktorí uprednostňujú sladšie vína.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ovocné dezerty,
-                                            jemné koláče, čokoládové pralinky.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="iza-bella">
+                        <div class="wine-card" @click="openWine('iza-bella')">
                             <h4>Iza-bella</h4>
                             <p class="wine-short-desc">Ružové, polosuché. Cuvée s intenzívnou jahodovou vôňou.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Iza-bella"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Cuvée z interspecifických odrôd, vrátane odrody Izabela, podľa ktorej
-                                            nesie aj svoj názov. Vyznačuje sa intenzívnou jahodovou vôňou,
-                                            ktorá je jeho charakteristickým znakom. Veľmi obľúbené víno
-                                            medzi našimi zákazníkmi.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ľahké predjedlá,
-                                            pikantné jedlá, grilované kuracie mäso, ovocné šaláty.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -417,39 +291,148 @@
                 <div class="wine-category">
                     <h3>Červené vína</h3>
                     <div class="wine-grid">
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="cabernet-cervene">
+                        <div class="wine-card" @click="openWine('cabernet-cervene')">
                             <h4>Cabernet Sauvignon</h4>
                             <p class="wine-short-desc">Červené, suché. Plné víno s tónmi čierneho ríbezľa.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Cabernet Sauvignon"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Plné červené víno s výraznou vôňou čierneho ríbezľa, papriky a korenia.
-                                            Dlhšie vyzrievané, s jemnými tanínovými tónmi a zamatovou chuťou.
-                                            Kráľ červených odrôd.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Hovädzie steaky,
-                                            divina, tvrdé zrejúce syry, pečené jahňacie.</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="wine-card" x-data="{ open: false }" @click="open = !open" :class="{ 'active': open }" data-id="ruby-cabernet">
+                        <div class="wine-card" @click="openWine('ruby-cabernet')">
                             <h4>Ruby Cabernet</h4>
                             <p class="wine-short-desc">Červené, polosladké. Fortifikované ťažké víno s vysokým alkoholom.</p>
-                            <div class="wine-detail-expandable" @click.stop>
-                                <div class="detail-content">
-                                    <img src="assets/images/wine-glass.png" alt="Ruby Cabernet"
-                                        class="detail-img-small">
-                                    <div class="detail-text">
-                                        <p>Fortifikované ťažké červené víno s vysokým obsahom alkoholu. Bohaté,
-                                            extraktívne, s intenzívnou chuťou zrelého tmavého ovocia a korenín.
-                                            Dlhá, zahrievajúca dochuť. Víno na meditáciu a špeciálne príležitosti.</p>
-                                        <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Tmavá čokoláda,
-                                            silné zrejúce syry, sušené ovocie, výborne aj ako digestív.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wine Detail Modal -->
+                <div class="wine-modal-overlay" x-show="selectedWine" x-transition:enter="modal-enter" x-transition:leave="modal-leave" @click="closeWine()" style="display: none;">
+                    <div class="wine-modal" @click.stop>
+                        <button class="wine-modal-close" @click="closeWine()">&times;</button>
+
+                        <div x-show="selectedWine === 'muller'">
+                            <h3>Müller Thurgau</h3>
+                            <p class="wine-modal-type">Biele, suché</p>
+                            <img src="assets/images/wine-glass.png" alt="Müller Thurgau" class="wine-modal-img">
+                            <p>Ľahké, nekomplikované víno s jemnou muškátovo-ovocnou vôňou. Má nižší obsah
+                                kyselín, vďaka čomu je veľmi harmonické a príjemne pitné.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Jednoduché úpravy
+                                hydiny, cestoviny, mäkké syry.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'solaris-suche'">
+                            <h3>Solaris</h3>
+                            <p class="wine-modal-type">Biele, suché</p>
+                            <img src="assets/images/wine-glass.png" alt="Solaris" class="wine-modal-img">
+                            <p>Moderná medziodrodová odroda s výraznou ovocnou arómou po citrusoch a tropickom ovocí.
+                                Svieže, minerálne víno s príjemnou chuťou. Odolná odroda pestovaná s minimálnym
+                                chemickým ošetrením.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ryby, morské plody,
+                                ľahké šaláty, sushi.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'veltlin'">
+                            <h3>Veltlínske zelené</h3>
+                            <p class="wine-modal-type">Biele, suché</p>
+                            <img src="assets/images/wine-glass.png" alt="Veltlínske zelené" class="wine-modal-img">
+                            <p>Klasika Malokarpatskej oblasti. Víno žltozelenej farby, vo vôni dominujú tóny
+                                mandlí a lipového kvetu. Chuť je korenistá, plná a svieža.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Tradičné slovenské
+                                jedlá, bravčové mäso, hydina.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'rizling-vlassky'">
+                            <h3>Rizling vlašský</h3>
+                            <p class="wine-modal-type">Biele, suché</p>
+                            <img src="assets/images/wine-glass.png" alt="Rizling vlašský" class="wine-modal-img">
+                            <p>Víno s jemnou kvetinovou vôňou a sviežou chuťou s typickou odrodovou
+                                kyselinkou. Veľmi obľúbené a pitné víno.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Studené predjedlá,
+                                ryby, zeleninové šaláty.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'moravsky-muskat'">
+                            <h3>Moravský Muškát</h3>
+                            <p class="wine-modal-type">Biele, polosuché</p>
+                            <img src="assets/images/wine-glass.png" alt="Moravský Muškát" class="wine-modal-img">
+                            <p>Aromatická odroda s intenzívnou muškátovou vôňou a jemne sladkastou chuťou.
+                                Príjemne voňavé, pitné víno vhodné aj pre menej skúsených degustátorov.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Pikantné jedlá,
+                                ázijská kuchyňa, ovocné dezerty, výborne aj ako aperitív.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'palava'">
+                            <h3>Pálava</h3>
+                            <p class="wine-modal-type">Biele, polosuché</p>
+                            <img src="assets/images/wine-glass.png" alt="Pálava" class="wine-modal-img">
+                            <p>Kríženie Tramínu červeného a Mülleru Thurgau. Aromatická odroda s výraznou
+                                vôňou ruží, korenia a medu. Plné, extraktívne víno s príjemnou
+                                zvyškovou sladkosťou.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Korenisté jedlá,
+                                ázijská kuchyňa, syry s modrou plesňou, husacia pečeň.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'solaris-sladke'">
+                            <h3>Solaris <span style="font-weight: 400; font-size: 0.85em;">(sladké, 0.5l)</span></h3>
+                            <p class="wine-modal-type">Biele, sladké</p>
+                            <img src="assets/images/wine-glass.png" alt="Solaris sladké" class="wine-modal-img">
+                            <p>Neskorý zber so zvýšeným obsahom cukru. Víno s medovo-ovocnými tónmi,
+                                plné a harmonické. Bohatá chuť s dlhou sladkou dochuťou.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Dezerty,
+                                foie gras, modré syry, ovocné torty.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'cabernet-rose'">
+                            <h3>Cabernet Sauvignon rosé</h3>
+                            <p class="wine-modal-type">Ružové, polosuché</p>
+                            <img src="assets/images/wine-glass.png" alt="Cabernet Sauvignon rosé" class="wine-modal-img">
+                            <p>Ružové víno lososovej farby s príjemnou ovocnou vôňou po lesnom ovocí
+                                a jahodách. Svieže, ľahké a veľmi pitné víno s jemnou zvyškovou
+                                sladkosťou.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ľahké letné jedlá,
+                                grilované mäso, šaláty, pizza.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'frankovka-rose'">
+                            <h3>Frankovka modrá rosé <span style="font-weight: 400; font-size: 0.85em;">(sladké, 0.5l)</span></h3>
+                            <p class="wine-modal-type">Ružové, sladké</p>
+                            <img src="assets/images/wine-glass.png" alt="Frankovka modrá rosé" class="wine-modal-img">
+                            <p>Sladké ružové víno z odrody Frankovka modrá. Jemná ovocná chuť
+                                s tónmi lesného ovocia a višní. Príjemne pitné víno vhodné
+                                aj pre tých, ktorí uprednostňujú sladšie vína.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ovocné dezerty,
+                                jemné koláče, čokoládové pralinky.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'iza-bella'">
+                            <h3>Iza-bella</h3>
+                            <p class="wine-modal-type">Ružové, polosuché</p>
+                            <img src="assets/images/wine-glass.png" alt="Iza-bella" class="wine-modal-img">
+                            <p>Cuvée z interspecifických odrôd, vrátane odrody Izabela, podľa ktorej
+                                nesie aj svoj názov. Vyznačuje sa intenzívnou jahodovou vôňou,
+                                ktorá je jeho charakteristickým znakom. Veľmi obľúbené víno
+                                medzi našimi zákazníkmi.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Ľahké predjedlá,
+                                pikantné jedlá, grilované kuracie mäso, ovocné šaláty.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'cabernet-cervene'">
+                            <h3>Cabernet Sauvignon</h3>
+                            <p class="wine-modal-type">Červené, suché</p>
+                            <img src="assets/images/wine-glass.png" alt="Cabernet Sauvignon" class="wine-modal-img">
+                            <p>Plné červené víno s výraznou vôňou čierneho ríbezľa, papriky a korenia.
+                                Dlhšie vyzrievané, s jemnými tanínovými tónmi a zamatovou chuťou.
+                                Kráľ červených odrôd.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Hovädzie steaky,
+                                divina, tvrdé zrejúce syry, pečené jahňacie.</p>
+                        </div>
+
+                        <div x-show="selectedWine === 'ruby-cabernet'">
+                            <h3>Ruby Cabernet</h3>
+                            <p class="wine-modal-type">Červené, polosladké</p>
+                            <img src="assets/images/wine-glass.png" alt="Ruby Cabernet" class="wine-modal-img">
+                            <p>Fortifikované ťažké červené víno s vysokým obsahom alkoholu. Bohaté,
+                                extraktívne, s intenzívnou chuťou zrelého tmavého ovocia a korenín.
+                                Dlhá, zahrievajúca dochuť. Víno na meditáciu a špeciálne príležitosti.</p>
+                            <p class="food-pairing"><strong>Hodí sa k jedlu:</strong> Tmavá čokoláda,
+                                silné zrejúce syry, sušené ovocie, výborne aj ako digestív.</p>
                         </div>
                     </div>
                 </div>
@@ -540,7 +523,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=6"></script>
+    <script src="js/main.js?v=7"></script>
 </body>
 
 </html>
